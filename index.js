@@ -65,7 +65,8 @@ async function getSongLink(url) {
 }
 
 function createEmbed(data) {
-  const itunesData = data.entitiesByUniqueId[Object.keys(data.entitiesByUniqueId).filter(item => item.includes("ITUNES"))]
+  console.log(data)
+  const itunesData = data.entitiesByUniqueId[Object.keys(data.entitiesByUniqueId).filter(item => item.includes("SOUNDCLOUD") | item.includes("SPOTIFY") | item.includes("APPLE"))[0]]
   const linksByPlatform = data.linksByPlatform
 
   const fieldsArray = Object.keys(linksByPlatform).filter(platform => Object.keys(platformData).includes(platform)).map(_ => {
