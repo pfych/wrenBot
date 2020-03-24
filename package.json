@@ -11,6 +11,7 @@
   "dependencies": {
     "async-request": "^1.2.0",
     "discord.js": "^12.0.2",
+    "lastfm-node-client": "^2.2.0",
     "songlink-api": "^1.0.0"
   }
 }
