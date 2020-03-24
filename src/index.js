@@ -18,7 +18,7 @@ client.on("message", async msg => {
 })
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!\ninvite with https://discordapp.com/api/oauth2/authorize?client_id=686462477956808742&permissions=8&scope=bot`)
+  console.log(`Logged in as ${client.user.tag}!\ninvite with https://discordapp.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`)
 });
 
 function login() {
