@@ -18,13 +18,13 @@ const createEmbed = (data, client) => {
       "url": `${metadata.thumbnailUrl}`
     },
     "footer": {
-      "text": `Service provided by https://song.link ${data.cached ? `(Cached)` : `(Fetched)`}${Object.keys(fieldsArray).includes('spotify') ? `` : `\n\nThe API seems to of left out spotify\nClick "More" to view all services`}`
+      "text": `Service provided by https://song.link${Object.keys(fieldsArray).includes('spotify') ? `` : `\n\nThe API seems to of left out Spotify!\nClick "More" to view all services`} ${data.cached ? `(Cached)` : `(Fetched)`}`
     },
     "fields": [
       ...fieldsArray, 
       {
         "name": `${config.zeroWidth}`,
-        'value': `🎵 [More](${data.pageUrl})`
+        'value': `[View more...](${data.pageUrl})`
       }
     ]
   }
