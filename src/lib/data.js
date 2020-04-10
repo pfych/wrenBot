@@ -1,34 +1,33 @@
 exports.platformData = {
-  "spotify": {
+  spotify: {
     emoji: "686481957730779146",
-    prettyName: "Spotify"
+    prettyName: "Spotify",
   },
-  "soundcloud": {
+  soundcloud: {
     emoji: "686481619405766706",
-    prettyName: "Soundcloud"
+    prettyName: "Soundcloud",
   },
-  "google": {
+  google: {
     emoji: "686482178464284674",
-    prettyName: "Google Play"
+    prettyName: "Google Play",
   },
-  "appleMusic": {
+  appleMusic: {
     emoji: "686482030120140886",
-    prettyName: "Apple Music"
+    prettyName: "Apple Music",
   },
-  "youtube": {
+  youtube: {
     emoji: "689044959290196020",
-    prettyName: "Youtube"
-  }
-}
+    prettyName: "Youtube",
+  },
+};
 
 exports.platforms = [
   "open.spotify.com",
   "play.google.com/music/m",
-  'music.apple.com',
-  'soundcloud.com'
-]
+  "music.apple.com",
+  "soundcloud.com",
+];
 
+exports.zeroWidth = "​";
 
-exports.zeroWidth = "​"
-
-exports.cache = []
+exports.cache = [];

@@ -1,33 +1,48 @@
-const config = require("../lib/data")
+const config = require("../lib/data");
 
 const createEmbed = (data, client) => {
-  const metadata = data.entitiesByUniqueId[Object.keys(data.entitiesByUniqueId).filter(item => item.includes("SOUNDCLOUD") | item.includes("SPOTIFY") | item.includes("APPLE") | item.includes("ITUNES"))[0]]
-  const linksByPlatform = data.linksByPlatform
+  const metadata =
+    data.entitiesByUniqueId[
+      Object.keys(data.entitiesByUniqueId).filter(
+        (item) =>
+          item.includes("SOUNDCLOUD") |
+          item.includes("SPOTIFY") |
+          item.includes("APPLE") |
+          item.includes("ITUNES")
+      )[0]
+    ];
+  const linksByPlatform = data.linksByPlatform;
 
-  const fieldsArray = Object.keys(linksByPlatform).filter(platform => Object.keys(config.platformData).includes(platform)).map(_ => {
-    return {
-      "name": `${config.zeroWidth}`,
-      "value": `${client.emojis.resolve(config.platformData[_].emoji)} [${config.platformData[_].prettyName}](${linksByPlatform[_].url})`
-    }
-  })
+  const fieldsArray = Object.keys(linksByPlatform)
+    .filter((platform) => Object.keys(config.platformData).includes(platform))
+    .map((_) => {
+      return {
+        name: `${config.zeroWidth}`,
+        value: `${client.emojis.resolve(config.platformData[_].emoji)} [${
+          config.platformData[_].prettyName
+        }](${linksByPlatform[_].url})`,
+      };
+    });
 
   return {
-    "title": `${metadata.title}`,
-    "description": `By ${metadata.artistName}`,
-    "thumbnail": {
-      "url": `${metadata.thumbnailUrl}`
+    title: `${metadata.title}`,
+    description: `By ${metadata.artistName}`,
+    thumbnail: {
+      url: `${metadata.thumbnailUrl}`,
     },
-    "footer": {
-      "text": `Service provided by https://song.link ${data.cached ? `(Cached)` : `(Fetched)`}`
+    footer: {
+      text: `Service provided by https://song.link ${
+        data.cached ? `(Cached)` : `(Fetched)`
+      }`,
     },
-    "fields": [
-      ...fieldsArray, 
+    fields: [
+      ...fieldsArray,
       {
-        "name": `${config.zeroWidth}`,
-        'value': `[View more...](${data.pageUrl})`
-      }
-    ]
-  }
-}
+        name: `${config.zeroWidth}`,
+        value: `[View more...](${data.pageUrl})`,
+      },
+    ],
+  };
+};
 
-module.exports = createEmbed
+module.exports = createEmbed;
