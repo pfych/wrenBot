@@ -1,4 +1,7 @@
-exports.platformData = {
+import { SongCache } from "./types/cache"
+import { PlatformData } from "./types/platforms"
+
+export let platformData: {[key: string]: PlatformData} = {
   "spotify": {
     emoji: "686481957730779146",
     prettyName: "Spotify"
@@ -21,7 +24,7 @@ exports.platformData = {
   }
 }
 
-exports.platforms = [
+export let platforms: string[] = [
   "open.spotify.com",
   "play.google.com/music/m",
   'music.apple.com',
@@ -29,6 +32,6 @@ exports.platforms = [
 ]
 
 
-exports.zeroWidth = "​"
+export let zeroWidth: string = "​"
 
-exports.cache = []
+export let cache: SongCache = []
