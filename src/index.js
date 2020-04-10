@@ -5,7 +5,6 @@ const client = new Discord.Client();
 
 const createEmbed = require("./functions/createEmbed");
 const getSongLink = require("./functions/getSongLink");
-const fmEmbed = require("./functions/lastfm");
 
 client.on("message", async (msg) => {
   if (msg.author.bot) return;
@@ -15,8 +14,20 @@ client.on("message", async (msg) => {
       let embed = createEmbed(await getSongLink(service), client);
       msg.channel.send({ embed });
     });
-  } else if (msg.content.toLowerCase().includes("top album?")) {
-    fmEmbed(msg);
+  } else if (msg.content.toLowerCase().includes("random album?")) {
+    let embed = createEmbed(
+      {
+        ...config.cache[Math.floor(Math.random() * config.cache.length)].data,
+        cached: true,
+      },
+      client
+    );
+    msg.channel.send(
+      `Here's a random album from my cache. *n(${config.cache.length})*`,
+      {
+        embed,
+      }
+    );
   }
 });
 
