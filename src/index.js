@@ -11,7 +11,10 @@ client.on("message", async (msg) => {
   if (new RegExp(config.platforms.join("|")).test(msg)) {
     let services = msg.content.match(/\bhttps?:\/\/\S+/gi);
     services.forEach(async (service) => {
-      let embed = createEmbed(await getSongLink(service), client);
+      let embed = createEmbed(
+        await getSongLink(service.replace(/(^\?)/g, "")),
+        client
+      );
       msg.channel.send({ embed });
     });
   } else if (msg.content.toLowerCase().includes("random album?")) {

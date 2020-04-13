@@ -31,6 +31,7 @@ exports.platforms = [
   "music.apple.com",
   "soundcloud.com",
   "deezer.com",
+  "^\\?(https?://)?(www.)?(youtube.com|youtu.?be)/.+$",
 ];
 
 exports.zeroWidth = "​";
