@@ -5,6 +5,7 @@ const createEmbed = (data, client) => {
     data.entitiesByUniqueId[
       Object.keys(data.entitiesByUniqueId).filter(
         (item) =>
+          item.includes("DEEZER") |
           item.includes("SOUNDCLOUD") |
           item.includes("SPOTIFY") |
           item.includes("APPLE") |
