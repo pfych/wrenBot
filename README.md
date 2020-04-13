@@ -7,6 +7,16 @@ Automatically translate streaming service links
 ## Platform Support
 
 This bot supports every platform the [song.link](song.link) platform supports as it takes advantage of its API
+
+Currently it detects the following URL Schemes:
+
+- Spotify
+- Apple Music
+- Deezer
+- Soundcloud
+- Google Music
+- Youtube (Prepend links with `?`)
+
 ![Apple Music](https://i.imgur.com/qNJfifJ.jpg)
 ![Spotify](https://i.imgur.com/xEwsURu.jpg)
 
@@ -16,4 +26,4 @@ Currently Wrenbot only stores requested albums, Not who requested them or which 
 
 ## Support & Maintenance
 
-Please contact me via Discord @Puffycheeses#0001 or via email attached to this Github account. If you have any problems with the bot please create a Github issue.
+Please contact me via Discord @Puffycheeses#0001 or via email attached to this Github account. If you have any problems with the bot or suggestions please create a Github issue.
