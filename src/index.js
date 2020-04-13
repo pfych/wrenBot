@@ -5,9 +5,13 @@ const client = new Discord.Client();
 
 const createEmbed = require("./functions/createEmbed");
 const getSongLink = require("./functions/getSongLink");
+const help = require("./functions/help");
 
 client.on("message", async (msg) => {
   if (msg.author.bot) return;
+  if (msg.mentions.has(client.user)) {
+    help(msg);
+  }
   if (new RegExp(config.platforms.join("|")).test(msg)) {
     let services = msg.content.match(/\bhttps?:\/\/\S+/gi);
     services.forEach(async (service) => {
@@ -38,6 +42,10 @@ client.on("ready", () => {
   console.log(
     `Logged in as ${client.user.tag}!\ninvite with https://discordapp.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`
   );
+  client.user.setPresence({
+    activity: { name: "@ me for help!" },
+    status: "online",
+  });
 });
 
 function login() {
