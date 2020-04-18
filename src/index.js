@@ -9,7 +9,7 @@ const help = require("./functions/help");
 
 client.on("message", async (msg) => {
   if (msg.author.bot) return;
-  if (msg.mentions.has(client.user)) {
+  if (msg.mentions.has(client.user, { ignoreEveryone: true })) {
     help(msg);
   }
   if (new RegExp(config.platforms.join("|")).test(msg)) {
