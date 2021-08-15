@@ -1,8 +1,8 @@
-# Wrenbot
+# Wrenbot (DEPRECATED)
+
+**THIS PROJECT HAS BEEN SUPERSEDED [VIEW NEW REPO HERE](https://github.com/Puffycheeses/music_linkr)**
 
 Automatically translate streaming service links
-
-[Invite here](https://discordapp.com/oauth2/authorize?client_id=686462477956808742&permissions=8&scope=bot)
 
 ## Platform Support
 
@@ -16,9 +16,6 @@ Currently it detects the following URL Schemes:
 - Soundcloud
 - Google Music
 - Youtube (Prepend links with `?`)
-
-![Apple Music](https://i.imgur.com/qNJfifJ.jpg)
-![Spotify](https://i.imgur.com/xEwsURu.jpg)
 
 ## What does it store?
 
